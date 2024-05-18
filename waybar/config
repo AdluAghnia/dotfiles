@@ -1,0 +1,62 @@
+{
+  "layer": "top",
+    "modules-left": ["custom/arch"],
+    "modules-center": ["hyprland/workspaces"],
+    "modules-right": ["clock", "backlight", "pulseaudio", "bluetooth", "network", "battery"],
+    "custom/arch": {
+      "format": "",
+      "tooltip": false,
+      "on-click": "sh $HOME/.config/rofi/bin/launcher"
+    },
+    "hyprland/workspaces": {
+      "format": "{name}",
+      "format": "{icon}",
+      "tooltip": false,
+      "all-outputs": false,
+      "format-icons": {
+        "active": "",
+        "default": ""
+      }
+    },
+    "clock": {
+      "format": "  {:%H:%M}",
+    },
+   "backlight": {
+      "device": "intel_backlight",
+      "format": "{icon} {percent}%",
+      "format-icons": ["","", "", "", "", "", "", "", "",]
+    },
+    "pulseaudio": {
+      "format": "{icon}   {volume}%",
+      "format-muted": "",
+      "tooltip": false,
+      "format-icons": {
+        "headphone": "",
+        "default": ["", "", "", "", "", "", "", ""]
+      },
+      "scroll-step": 1,
+    },
+    "bluetooth": {
+      "format": " {status}",
+      "format-disabled": "", // an empty format will hide the module
+      "format-connected": " {num_connections}",
+      "tooltip-format": "{device_enumerate}",
+      "tooltip-format-enumerate-connected": "{device_alias}   {device_address}"
+    },
+    "network": {
+      "interface": "wlo1",
+      "format": "{ifname}",
+      "format-wifi": " ",
+      "format-ethernet": "{ipaddr}/{cidr} ",
+      "format-disconnected": "<span color='#dd5ad5'>󰖪 </span>No Network",
+      "tooltip": false,
+      "on-click": "sh $HOME/.config/rofi/bin/wifi.sh"
+    },
+    "battery": {
+      "format": "{icon} {capacity}%",
+      "format-icons": ["", "", "", "", "", "", "", "", "", ""],
+      "format-charging": " {capacity}%",
+      "tooltip": false,
+      "on-click": "sh $HOME/.config/rofi/bin/powermenu"
+    },
+}

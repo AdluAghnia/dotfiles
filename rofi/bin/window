@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+rofi \
+  -show window \
+  -scroll-method 0 \
+  -teminal kitty \
+  -theme "$HOME/.config/rofi/config/window.rasi"
